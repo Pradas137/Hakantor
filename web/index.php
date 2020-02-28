@@ -18,13 +18,13 @@
 	$result = pg_query($dbconn, "SELECT nom, password FROM usuari");
 	if (!$result) {
 		echo "Ocurrió un error.\n";
-	exit;
-}
+		exit;
+	}
 
-while ($row = pg_fetch_row($result)) {
-  echo "nom: $row[0]  password: $row[1]";
-  echo "<br />\n";
-}
+	while ($row = pg_fetch_row($result)) {
+  		echo "nom: $row[0]  password: $row[1]";
+  		echo "<br />\n";
+	}
  
 
 	?>
