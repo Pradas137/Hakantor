@@ -15,10 +15,9 @@
 
 	echo "Connectado"
 
-	$query = 'SELECT * FROM usuai';
+	$query = 'SELECT * FROM usuari';
 $result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
 
-// Imprimiendo los resultados en HTML
 echo "<table>\n";
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     echo "\t<tr>\n";
