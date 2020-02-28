@@ -8,8 +8,8 @@
 	<h2>Conection</h2>
 
 	 <form class="" action="index.php" method="post">
-      <input type="text" name="user">User <br>
-      <input type="password" name="pass">Pass <br>
+      <input type="text" name="nom">Usuario <br>
+      <input type="password" name="password">Contraseña <br>
       <input type="submit" name="" value="ENTRAR"> <br>
     </form>
 
