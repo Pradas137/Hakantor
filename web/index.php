@@ -13,7 +13,7 @@
 	$dbconn = pg_connect($dbopts)
 	or die('No se ha podido conectar: ' . pg_last_error());
 
-	echo "Connectado"
+	echo "Connectado";
 
 	$result = pg_query($dbconn, "SELECT nom, password FROM usuari");
 	if (!$result) {
