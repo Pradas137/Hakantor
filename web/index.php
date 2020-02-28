@@ -15,20 +15,25 @@
 
 	echo "Connectado"
 
-	if(isset($_POST["Usuari"]))
+	$query = 'SELECT * FROM usuai';
+$result = pg_query($query) or die('La consulta fallo: ' . pg_last_error());
+
+// Imprimiendo los resultados en HTML
+echo "<table>\n";
+while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+    echo "\t<tr>\n";
+    foreach ($line as $col_value) {
+        echo "\t\t<td>$col_value</td>\n";
+    }
+    echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+pg_free_result($result);
+
+pg_close($dbconn);
 
 	?>
-
- <form action="verifica_usuario.php" method="POST" id="formLogin">
-            
-            <label>User</label><br/>
-            <input name="user" type="text" id="user" /><br/>
-            <label>Password</label><br/>
-            <input name="password" type="password" id="password" /><br/><br/>
-            
-            <input type="submit" name="Submit" value="LOGIN" /> 
-
-</form>
 
 </body>
 </html>
