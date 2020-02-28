@@ -24,7 +24,7 @@
         $user = $_POST['nom'];
         $pass = $_POST['nom'];
 
-        $sql = pg_query( "select * from usuaris where nom='{$nom}' and password='{$password}' ;" );
+        $sql = pg_query("select*from usuari where nom='{$nom}'and password='{$password}';");
 
         if ( pg_num_rows($sql) > 0 ) {
             echo 'Estas dentro';
