@@ -15,6 +15,18 @@
 
 	echo "Connectado"
 
+	$result = pg_query($dbconn, "SELECT nom, password FROM usuari");
+	if (!$result) {
+		echo "Ocurrió un error.\n";
+	exit;
+}
+
+while ($row = pg_fetch_row($result)) {
+  echo "nom: $row[0]  password: $row[1]";
+  echo "<br />\n";
+}
+ 
+
 	?>
 
 <form action="index.php" method="POST" id="formLogin">
